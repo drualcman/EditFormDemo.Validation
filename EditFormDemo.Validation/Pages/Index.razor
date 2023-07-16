@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<div class="container">
+    <h1 class="title">Validation form demo</h1>
+    <EditForm EditContext=FormContext OnValidSubmit=SubmitForm>
+        <div class="field">
+            <label class="label">First Name</label>
+            <div class="control">
+                <InputText @bind-Value=Model.FirstName class="input" />
+                <ValidationMessage For="() => Model.FirstName" />
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <InputText @bind-Value=Model.Email class="input" type="email" />
+                <ValidationMessage For="() => Model.Email" />
+            </div>
+        </div>    
+        <div class="field">
+            <div class="control">
+                <button class="button is-success">Submit</button>
+            </div>
+            <label class="label">@Messages</label>
+        </div>
+
+        
+    </EditForm>
+</div>
